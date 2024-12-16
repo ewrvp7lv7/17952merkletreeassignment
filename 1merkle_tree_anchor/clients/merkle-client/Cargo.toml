@@ -1,0 +1,9 @@
+[package]
+name = "merkle-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anchor-client = "0.30.0"
+shellexpand = "3.1"
+merkle = { path = "../../programs/merkle" }
