@@ -16,10 +16,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         RpcTransactionLogsConfig { commitment: None },
     )?;
 
+    println!("Subscriber started...");
+
     while let Ok(msg) = rx.recv() {
-        for l in msg.value.logs {
-            println!("{}", l);
-        }
+        println!("{:?}", msg);
+        // for l in msg.value.logs {
+        //     println!("{}", l);
+        // }
     }
 
     sub.shutdown().unwrap();

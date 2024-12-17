@@ -14,7 +14,7 @@ pub enum CounterInstruction {
     InitCounter(u8),
     IncCounter,
     DecCounter,
-    InitTree(String),
+    AddLeaf(String),
 }
 
 impl Unpack for CounterInstruction {

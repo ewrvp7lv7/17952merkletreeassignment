@@ -122,8 +122,8 @@ pub fn process_change_counter(
     Ok(())
 }
 
-pub fn init_tree(program_id: &Pubkey, accounts: &[AccountInfo], leaf: String) -> ProgramResult {
-    msg!("init_tree: {}", leaf);
+pub fn add_leaf(program_id: &Pubkey, accounts: &[AccountInfo], leaf: String) -> ProgramResult {
+    msg!("add_leaf: {}", leaf);
 
     let accounts_iter = &mut accounts.iter();
 

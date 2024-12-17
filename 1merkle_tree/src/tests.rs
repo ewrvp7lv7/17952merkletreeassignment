@@ -217,7 +217,7 @@ async fn test_init() {
         panic_log(format!("No counter account found"));
     }
 
-    println!("Testing Strings..");
+    println!("Testing AddLeaf..");
 
     // let dec_instruction = Instruction::new_with_bytes(
     //     program_id,
@@ -225,7 +225,7 @@ async fn test_init() {
     //     vec![AccountMeta::new(counter_keypair_pub, true)],
     // );
 
-    let data = CounterInstruction::InitTree("Test-string1".to_string());
+    let data = CounterInstruction::AddLeaf("Test-string1".to_string());
 
     let dec_instruction = Instruction::new_with_borsh(
         program_id,
@@ -254,7 +254,7 @@ async fn test_init() {
             solana_program::borsh1::try_from_slice_unchecked::<CounterAccount>(&account_data.data)
                 .unwrap();
 
-        if let CounterInstruction::InitTree(init_str) = data {
+        if let CounterInstruction::AddLeaf(init_str) = data {
             println!("root_hash {}", counter_data.root_hash);
             println!("leafs {:?}", counter_data.leafs);
 
@@ -270,7 +270,7 @@ async fn test_init() {
         panic_log(format!("No counter account found"));
     }
 
-    println!("Testing Strings..");
+    println!("Testing AddLeaf..");
 
     // let dec_instruction = Instruction::new_with_bytes(
     //     program_id,
@@ -278,7 +278,7 @@ async fn test_init() {
     //     vec![AccountMeta::new(counter_keypair_pub, true)],
     // );
 
-    let data = CounterInstruction::InitTree("Test-string2".to_string());
+    let data = CounterInstruction::AddLeaf("Test-string2".to_string());
 
     let dec_instruction = Instruction::new_with_borsh(
         program_id,
@@ -307,7 +307,7 @@ async fn test_init() {
             solana_program::borsh1::try_from_slice_unchecked::<CounterAccount>(&account_data.data)
                 .unwrap();
 
-        if let CounterInstruction::InitTree(init_str) = data {
+        if let CounterInstruction::AddLeaf(init_str) = data {
             println!("root_hash {}", counter_data.root_hash);
             println!("leafs {:?}", counter_data.leafs);
 

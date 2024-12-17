@@ -23,7 +23,7 @@ pub fn entrypoints(
         }
         CounterInstruction::IncCounter => process_change_counter(program_id, accounts, true),
         CounterInstruction::DecCounter => process_change_counter(program_id, accounts, false),
-        CounterInstruction::InitTree(leaf) => init_tree(program_id, accounts, leaf),
+        CounterInstruction::AddLeaf(leaf) => add_leaf(program_id, accounts, leaf),
     }
 }
 
